@@ -1,2 +1,2 @@
 # Curso_Egg_Ejercicios
-Ejercicios a partir de la Guía Introducción Java.
+En este repositorio, se encuentran mis ejercicios del curso de Programacion Fullstack de Egg.
