@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejercicio_Persona">
+  <ClassDiagramComponents>
+    <Class name="Dni" package="dni" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="serie" type="char" visibility="package"/>
+        <Field name="n_doc" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="char" name="serie"/>
+          <Argument type="int" name="n_doc"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getSerie" returnType="char" visibility="public"/>
+        <Method name="getN_doc" returnType="int" visibility="public"/>
+        <Method name="setSerie" returnType="void" visibility="public">
+          <Argument type="char" name="serie"/>
+        </Method>
+        <Method name="setN_doc" returnType="void" visibility="public">
+          <Argument type="int" name="n_doc"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Ejercicio_Persona" package="ejercicio_persona" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="Persona" visibility="public" xPosition="236.0" yPosition="159.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="package"/>
+        <Field name="apellido" type="String" visibility="package"/>
+        <Field name="doc" type="Dni" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Dni" name="doc"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="char" name="serie"/>
+          <Argument type="int" name="num"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="getDoc" returnType="Dni" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="setDoc" returnType="void" visibility="public">
+          <Argument type="Dni" name="doc"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="doc" source="Persona.Persona" target="dni.Dni" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Persona.Persona" target="dni.Dni" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="JavaApplication28">
+  <ClassDiagramComponents>
+    <Class name="ejercico_jugador" package="" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Equipo" package="equipo" visibility="public" xPosition="20.0" yPosition="172.0">
+      <Fields>
+        <Field name="lista" type="ArrayList&lt;Jugador&gt;" visibility="package"/>
+        <Field name="read" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getLista" returnType="ArrayList&lt;Jugador&gt;" visibility="public"/>
+        <Method name="getRead" returnType="Scanner" visibility="public"/>
+        <Method name="setLista" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Jugador&gt;" name="lista"/>
+        </Method>
+        <Method name="setRead" returnType="void" visibility="public">
+          <Argument type="Scanner" name="read"/>
+        </Method>
+        <Method name="generar_lista" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Jugador" package="jugador" visibility="public" xPosition="193.0" yPosition="122.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="package"/>
+        <Field name="apellido" type="String" visibility="package"/>
+        <Field name="num_jugador" type="int" visibility="package"/>
+        <Field name="posicion" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="int" name="num_jugador"/>
+          <Argument type="int" name="posicion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="getNum_jugador" returnType="int" visibility="public"/>
+        <Method name="getPosicion" returnType="int" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="setNum_jugador" returnType="void" visibility="public">
+          <Argument type="int" name="num_jugador"/>
+        </Method>
+        <Method name="setPosicion" returnType="void" visibility="public">
+          <Argument type="int" name="posicion"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="lista" source="equipo.Equipo" target="jugador.Jugador" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Jugador&gt;"/>
+    <UseRelation source="equipo.Equipo" target="jugador.Jugador" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
