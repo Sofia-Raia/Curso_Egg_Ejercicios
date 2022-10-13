@@ -36,6 +36,8 @@ public class Ej7_Persona {
        imcs[3] = p4.calcularIMC();
        edades[3]= p4.esMayorDeEdad();
        
+
+       
 //       Por último, guardaremos los resultados de los métodos calcularIMC y esMayorDeEdad en
 //distintas variables, para después en el main, calcular un porcentaje de esas 4 personas
 //cuantas están por debajo de su peso, cuantas en su peso ideal y cuantos, por encima, y
