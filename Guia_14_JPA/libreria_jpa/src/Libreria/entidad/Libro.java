@@ -6,11 +6,13 @@ package Libreria.entidad;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import javax.persistence.OneToOne;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -21,14 +23,14 @@ public class Libro implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long isbn;
     private String titulo;
     private Integer agnio;
     private Integer ejemplares;
     private Integer ejemplaresPrestados;
     private Integer ejemplaresRestantes;
-    private Boolean alta;
+    private Boolean alta=true;
     @OneToOne
     private Autor autor;
     @OneToOne
@@ -124,9 +126,7 @@ public class Libro implements Serializable {
     public void setEditorial(Editorial editorial) {
         this.editorial = editorial;
     }
-      
-    
-
+ 
   
 
     @Override
@@ -151,7 +151,10 @@ public class Libro implements Serializable {
 
     @Override
     public String toString() {
-        return "Libreria.entidad.Libro[ id=" + isbn + " ]";
+        return "[ isbn= " + isbn + ", Título= "+ titulo+ ", Año= "+ agnio +
+                ", Ejemplares= "+ ejemplares+ ", Ejemplares prestados= "+
+                ejemplaresPrestados + ", Ejemplares restantes=  "+ ejemplaresRestantes +
+                ", Autor= " + autor + " y Editorial= " + editorial +"]\n";
     }
     
 }

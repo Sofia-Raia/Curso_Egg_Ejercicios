@@ -6,6 +6,7 @@ package Libreria.entidad;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,10 +20,10 @@ public class Autor implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private Boolean alta;
+    private Boolean alta=true;
 
     public Autor() {
     }
@@ -62,7 +63,8 @@ public class Autor implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
+    
+ 
     @Override
     public int hashCode() {
         int hash = 0;
@@ -85,7 +87,7 @@ public class Autor implements Serializable {
 
     @Override
     public String toString() {
-        return "Libreria.entidad.Autor[ id=" + id + " ]";
+        return "[ id=" + id + " y Nombre= "+ nombre+ "]";
     }
     
 }

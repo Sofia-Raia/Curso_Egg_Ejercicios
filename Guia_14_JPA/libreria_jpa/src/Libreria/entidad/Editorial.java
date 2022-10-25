@@ -6,9 +6,11 @@ package Libreria.entidad;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -19,10 +21,12 @@ public class Editorial implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private Boolean alta;
+    private Boolean alta= true;
+    
+    
 
     public Editorial() {
     }
@@ -61,6 +65,8 @@ public class Editorial implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    
 
     @Override
     public int hashCode() {
@@ -84,7 +90,7 @@ public class Editorial implements Serializable {
 
     @Override
     public String toString() {
-        return "Libreria.entidad.Editorial[ id=" + id + " ]";
+        return "[ id=" + id + " y Nombre= "+ nombre+" ]";
     }
     
 }
