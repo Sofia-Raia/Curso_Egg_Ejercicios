@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace="/fragments/head :: head"></head>
+    <head>
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+
+    <body>
+       <nav th:replace="fragments/navbar :: nav"></nav>
+       <div class="bg-success" th:if="${deleteSuccess}!=null" th:text="${deleteSuccess}"></div>
+       <div class="bg-danger" th:if="${deleteFail}!=null" th:text="${deleteFail}"></div>
+        <div class="container m-5" >
+
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Cuerpo</th>
+                        <th scope="col">Fecha de Alta</th>
+                        <th scope="col" sec:authorize="hasRole('ADMIN')" >Acciones</th>
+                        
+                    </tr>
+                </thead>
+                <tbody th:each="noticia : ${noticias}"> 
+                    <tr>
+                        <th scope="row" th:text="${noticia.id}"></th>
+                        <td th:text="${noticia.titulo}"></td>
+                        <td th:text="${noticia.cuerpo}"></td>
+                        <td th:text="${noticia.fechaAlta}"></td>
+                         <td>
+                             <a class="btn btn-primary btn-sm" sec:authorize="hasRole('ADMIN')" th:href= "@{/noticia/modificar/__${noticia.id}__}"><i class="bi bi-pen"></i> Modificar </a><br>
+                             <form class="formulario" th:action="@{/noticia/eliminar/__${noticia.id}__}" method="POST">
+                                 <input type="submit" class="btn btn-danger btn-sm" sec:authorize="hasRole('ADMIN')" value="Eliminar" />
+                             </form>
+                             
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+              <div th:if="${exito}!=null" class="card text-white bg-success mb-3 mt-3 mensajeExito" >
+                <div class="card-body">
+                    <h5 class="card-title">Exito ð</h5>
+                    <p class="card-text" th:text="${exito}"></p>
+                </div>
+            </div>
+            <div th:if="${error}!=null" class="card text-white bg-danger mb-3 mensajeError" >
+                <div class="card-body">
+                    <h5 class="card-title">Error ð</h5>
+                    <p class="card-text" th:text="${error}"></p>
+                </div>
+            </div>
+
+            <section class="py-5 text-center container">
+                <div class="row py-lg-5">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <a th:href="@{/inicio}" class="btn btn-primary my-2">Volver</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer class="text-muted py-5">
+            <div class="containerFooter">
+                <p class="mb-1">Album example is &copy; Bootstrap,<br>but please download and customize it for yourself!</p>
+                <p class="mb-0">New to Bootstrap? <a href="/"><br>Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+                <p class="float-end mb-1">
+                    <a href="#" style="text-decoration:none"><span>⬆️</span> Back to top</a>
+                </p>
+            </div>
+        </footer>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
+
+</html>

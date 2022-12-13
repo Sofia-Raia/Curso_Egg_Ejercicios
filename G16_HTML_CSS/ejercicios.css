@@ -1,0 +1,31 @@
+body{
+    background-color: cadetblue;
+}
+h1, h2 {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h1 + p {
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:  aqua;
+}
+
+h2 + p {
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: blue;
+}
+/*link a visitar */
+a:link{
+  color: #CC0000;
+}
+/*mouse sobre el link */
+a:hover{
+    background-color: #CC0000;
+    color: white;
+}
+/*link visitado */
+a:visited{
+    color : #ccc;
+}

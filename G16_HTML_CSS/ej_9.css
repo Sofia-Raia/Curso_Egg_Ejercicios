@@ -1,0 +1,53 @@
+#titulo{
+    color : darkcyan; 
+}
+p, strong{
+    color:crimson
+}
+.destacado {
+    color : coral
+}
+p{
+    color: black;
+}
+#subtitulo{
+    color: blue;
+}
+p a{
+    color :red
+
+}
+p em{
+    color: blue;
+}
+.especial{
+    color:blueviolet;
+}
+table + thead + tbody + tr + td{
+    border: black 1px solid; /*no funciona los bordes de la tabla*/
+}
+table .especial{
+    color:darkgoldenrod;
+}
+tbody td{
+    color: green;
+}
+tbody tr td strong{
+	color: darkgoldenrod;
+}
+
+tfoot th {
+color: red;
+} 
+tbody tr th{
+    color :red;
+}
+div p{
+    color:darkolivegreen;
+}
+div p #especial{
+    color: blueviolet;
+}
+div p a{
+    color: darkslategray;
+}
